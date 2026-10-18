@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Personal Uploader CLI</title>
+<style>
+  :root {
+    --bg: #ffffff; --fg: #1c1e21; --muted: #5f6368; --accent: #1a4b8c;
+    --border: #e0e0e0; --card: #f7f8fa;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #17181c; --fg: #e8eaed; --muted: #9aa0a6; --accent: #8ab4f8;
+      --border: #3c4043; --card: #202124;
+    }
+  }
+  body {
+    margin: 0; background: var(--bg); color: var(--fg);
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.65;
+  }
+  main { max-width: 720px; margin: 0 auto; padding: 48px 16px 80px; }
+  h1 { font-size: 1.9rem; margin-bottom: 0.2em; }
+  .subtitle { color: var(--muted); font-style: italic; margin-top: 0; }
+  h2 { font-size: 1.25rem; margin-top: 2em; border-bottom: 1px solid var(--border); padding-bottom: 0.3em; }
+  a { color: var(--accent); }
+  code { font-family: Consolas, Menlo, monospace; background: var(--card); padding: 1px 5px; border-radius: 4px; font-size: 0.9em; }
+  ul { padding-left: 1.3em; }
+  .notice {
+    background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+    padding: 14px 18px; margin: 1.5em 0;
+  }
+  footer { color: var(--muted); font-size: 0.85rem; margin-top: 3em; border-top: 1px solid var(--border); padding-top: 1em; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Personal Uploader CLI</h1>
+  <p class="subtitle">A private, owner-only command-line utility for uploading original videos
+  to the owner's own YouTube channels.</p>
+
+  <div class="notice">
+    This page describes a private tool. The tool itself is not distributed and cannot be
+    used by anyone other than its owner.
+  </div>
+
+  <h2>Purpose</h2>
+  <p>Personal Uploader CLI is a private CLI (command-line) utility used exclusively by its
+  owner to upload original videos to YouTube channels owned and managed by the same owner.</p>
+  <ul>
+    <li>It is <strong>not a public service or SaaS product</strong>. There is no sign-up,
+      no user interface for third parties, and no way for anyone other than the owner to use it.</li>
+    <li><strong>Third-party users are not supported.</strong> The tool runs only on the
+      owner's personal computer, using the owner's own OAuth credentials.</li>
+    <li>All uploaded videos are <strong>original content created or managed by the owner</strong>.</li>
+  </ul>
+
+  <h2>Who uses it</h2>
+  <p>Only the owner. The tool has no third-party users, no customers, and no public access.
+  It is used only for YouTube channels owned and managed by the same owner.</p>
+
+  <h2>YouTube API usage</h2>
+  <p>The tool uses the <strong>YouTube Data API v3</strong> with OAuth 2.0:</p>
+  <ul>
+    <li><code>videos.insert</code> — uploads the owner's original videos. Every video is
+      uploaded with <code>privacyStatus=private</code>. The tool never sets a video to public
+      or unlisted, and never schedules publication.</li>
+    <li><code>channels.list (mine=true)</code> — verifies, before every upload, that the
+      authenticated channel matches the channel the owner intended (a safety check against
+      uploading to the wrong channel).</li>
+    <li><code>videoCategories.list</code> — resolves the numeric category ID for the
+      category chosen by the owner.</li>
+    <li><code>videos.list</code> — reads back the status of the owner's own uploads.</li>
+  </ul>
+  <p><strong>The final publishing decision is always made manually by the owner in
+  YouTube Studio.</strong> The tool's role ends at "uploaded as private".</p>
+
+  <h2>Data accessed and stored</h2>
+  <ul>
+    <li>The tool accesses only the owner's own channel information (channel ID and title)
+      and the owner's own uploaded videos.</li>
+    <li>It does <strong>not</strong> access, collect, store, sell, or share any third-party
+      YouTube data.</li>
+    <li>OAuth tokens are stored locally on the owner's personal computer and are never
+      transmitted anywhere except to Google's APIs.</li>
+  </ul>
+  <p>See the full <a href="./privacy/">Privacy Policy</a>.</p>
+
+  <h2>Terms of Use</h2>
+  <p>This tool is private software operated by its owner for the owner's own channels.
+  It is not offered, licensed, or distributed to any third party. Use of the YouTube API
+  through this tool complies with the
+  <a href="https://developers.google.com/youtube/terms/api-services-terms-of-service">YouTube API Services Terms of Service</a>,
+  the <a href="https://www.youtube.com/t/terms">YouTube Terms of Service</a>, and the
+  <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</p>
+
+  <h2>Contact</h2>
+  <p>Owner: <code>growing.cozy.chill@gmail.com</code></p>
+
+  <footer>Personal Uploader CLI — private, owner-only software. Not affiliated with or
+  endorsed by YouTube or Google.</footer>
+</main>
+</body>
+</html>
