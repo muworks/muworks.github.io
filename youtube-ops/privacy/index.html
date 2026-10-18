@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>youtube-ops Privacy Policy</title>
+<style>
+  :root {
+    --bg: #ffffff; --fg: #1c1e21; --muted: #5f6368; --accent: #1a4b8c;
+    --border: #e0e0e0; --card: #f7f8fa;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #17181c; --fg: #e8eaed; --muted: #9aa0a6; --accent: #8ab4f8;
+      --border: #3c4043; --card: #202124;
+    }
+  }
+  body {
+    margin: 0; background: var(--bg); color: var(--fg);
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.65;
+  }
+  main { max-width: 720px; margin: 0 auto; padding: 48px 16px 80px; }
+  h1 { font-size: 1.7rem; margin-bottom: 0.2em; }
+  .subtitle { color: var(--muted); margin-top: 0; }
+  h2 { font-size: 1.2rem; margin-top: 2em; border-bottom: 1px solid var(--border); padding-bottom: 0.3em; }
+  a { color: var(--accent); }
+  code { font-family: Consolas, Menlo, monospace; background: var(--card); padding: 1px 5px; border-radius: 4px; font-size: 0.9em; }
+  ul { padding-left: 1.3em; }
+  footer { color: var(--muted); font-size: 0.85rem; margin-top: 3em; border-top: 1px solid var(--border); padding-top: 1em; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Privacy Policy — youtube-ops</h1>
+  <p class="subtitle">Effective date: October 18, 2026</p>
+
+  <p>youtube-ops ("the tool") is a private, read-only command-line utility used exclusively
+  by its owner to review analytics of YouTube channels owned and managed by the same owner.
+  It has no third-party users. This policy describes what data the tool accesses and how it
+  is handled.</p>
+
+  <p>The tool uses YouTube API Services. By using it, the owner agrees to the
+  <a href="https://www.youtube.com/t/terms">YouTube Terms of Service</a> and the
+  <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</p>
+
+  <h2>Data Accessed</h2>
+  <p>With the owner's OAuth 2.0 consent (read-only scopes:
+  <code>youtube.readonly</code>, <code>yt-analytics.readonly</code>), the tool accesses only:</p>
+  <ul>
+    <li>The authenticated channel's ID and title</li>
+    <li>The owner's own videos and their public statistics (YouTube Data API v3)</li>
+    <li>Aggregated analytics reports for the owner's own channels, such as views, watch time,
+      traffic sources, search terms, geography, devices, audience retention, and
+      age/gender breakdowns (YouTube Analytics API). These reports are aggregated by YouTube
+      and do not identify individual viewers.</li>
+  </ul>
+  <p>Using an API key, the tool also reads <strong>publicly available</strong> data of other
+  channels and videos (titles, view counts, durations, tags) for comparison purposes.</p>
+
+  <h2>Data Stored</h2>
+  <p>Stored <strong>only on the owner's personal computer</strong>:</p>
+  <ul>
+    <li>OAuth tokens (access and refresh tokens), in local files readable only by the owner</li>
+    <li>JSON files containing the retrieved reports</li>
+  </ul>
+  <p>No database, cloud storage, or remote server is used.</p>
+
+  <h2>Purpose</h2>
+  <p>Data is used for one purpose: helping the owner understand the performance of the
+  owner's own channels and plan future content.</p>
+
+  <h2>Data Sharing</h2>
+  <p>None. The tool does not sell, share, transmit, or disclose any data to any third party.
+  Data is exchanged only between the owner's computer and Google's APIs. No advertising or
+  tracking services are used. The tool's use of information received from Google APIs adheres to the
+  <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>,
+  including the Limited Use requirements.</p>
+
+  <h2>Security</h2>
+  <ul>
+    <li>OAuth tokens, client secrets, and API keys are kept in local files excluded from
+      version control and are never published.</li>
+    <li>The tool requests only read-only scopes and communicates with Google APIs over HTTPS.</li>
+  </ul>
+
+  <h2>Data Retention and Deletion</h2>
+  <p>Tokens and reports are retained locally until the owner deletes them. The owner can
+  delete all stored data at any time by deleting the tool's local token and data folders.
+  Since the tool has no third-party users, no other person's data exists to delete.</p>
+
+  <h2>OAuth Revocation</h2>
+  <p>Access can be revoked at any time at
+  <a href="https://myaccount.google.com/permissions">https://myaccount.google.com/permissions</a>.
+  After revocation, the stored tokens become invalid.</p>
+
+  <h2>Contact</h2>
+  <p>For any questions about this policy: <code>growing.cozy.chill@gmail.com</code></p>
+
+  <footer><a href="../">&larr; Back to youtube-ops</a></footer>
+</main>
+</body>
+</html>

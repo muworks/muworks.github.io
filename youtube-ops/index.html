@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>youtube-ops</title>
+<style>
+  :root {
+    --bg: #ffffff; --fg: #1c1e21; --muted: #5f6368; --accent: #1a4b8c;
+    --border: #e0e0e0; --card: #f7f8fa;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #17181c; --fg: #e8eaed; --muted: #9aa0a6; --accent: #8ab4f8;
+      --border: #3c4043; --card: #202124;
+    }
+  }
+  body {
+    margin: 0; background: var(--bg); color: var(--fg);
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.65;
+  }
+  main { max-width: 720px; margin: 0 auto; padding: 48px 16px 80px; }
+  h1 { font-size: 1.7rem; margin-bottom: 0.2em; }
+  .subtitle { color: var(--muted); margin-top: 0; }
+  h2 { font-size: 1.2rem; margin-top: 2em; border-bottom: 1px solid var(--border); padding-bottom: 0.3em; }
+  a { color: var(--accent); }
+  code { font-family: Consolas, Menlo, monospace; background: var(--card); padding: 1px 5px; border-radius: 4px; font-size: 0.9em; }
+  ul { padding-left: 1.3em; }
+  footer { color: var(--muted); font-size: 0.85rem; margin-top: 3em; border-top: 1px solid var(--border); padding-top: 1em; }
+</style>
+</head>
+<body>
+<main>
+  <h1>youtube-ops</h1>
+  <p class="subtitle">A private, read-only analytics tool for the owner's own YouTube channels</p>
+
+  <p>youtube-ops is a personal command-line script run on the owner's own computer.
+  It reads performance data of YouTube channels owned and managed by the same owner,
+  and saves it locally so the owner can review channel growth. It has no third-party users
+  and is not offered to the public.</p>
+
+  <h2>What it does</h2>
+  <ul>
+    <li>Reads analytics for the owner's own channels (views, watch time, traffic sources,
+      audience retention, etc.) via the YouTube Analytics API</li>
+    <li>Reads public video statistics via the YouTube Data API v3</li>
+    <li>Saves the results as JSON files on the owner's computer</li>
+  </ul>
+
+  <h2>What it does not do</h2>
+  <ul>
+    <li>It does not upload, edit, or delete videos, comments, or any channel settings.
+      Only read-only OAuth scopes are requested
+      (<code>youtube.readonly</code>, <code>yt-analytics.readonly</code>).</li>
+    <li>It does not share data with anyone or send it to any server other than Google's APIs.</li>
+  </ul>
+
+  <p>The tool uses YouTube API Services and is subject to the
+  <a href="https://www.youtube.com/t/terms">YouTube Terms of Service</a> and the
+  <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</p>
+
+  <p><a href="privacy/">Privacy Policy</a></p>
+
+  <footer>Contact: <code>growing.cozy.chill@gmail.com</code></footer>
+</main>
+</body>
+</html>
